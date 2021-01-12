@@ -3,7 +3,7 @@
 # Class for decrypt the message
 class Handshake
   def initialize
-    @handshake = ['wink', 'double wink', 'close your eyes', 'jump']
+    @handshake = ['wink', 'double blink', 'close your eyes', 'jump']
   end
 
   def convert(encoded_msg)

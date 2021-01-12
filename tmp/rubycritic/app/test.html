@@ -47,12 +47,12 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2021-01-11 21:49:56 -0600'>2021-01-11 21:49:56 -0600</time>
+          Never committed
         
       </span>
     </div>
     <div>
-      <h3><small>app /</small> handshake.rb</h3>
+      <h3><small>app /</small> test.rb</h3>
     </div>
   </div>
   <!--End Page Title -->
@@ -68,15 +68,15 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">24</span><small> lines of codes</small></div>
-              <div><span class="metric">3</span><small> methods</small></div>
+              <div><span class="metric">10</span><small> lines of codes</small></div>
+              <div><span class="metric">0</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">5.7</span><small> complexity/method</small></div>
-              <div><span class="metric">1</span><small> churn</small></div>
+              <div><span class="metric">N/A</span><small> complexity/method</small></div>
+              <div><span class="metric">0</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">17.07</span><small> complexity</small></div>
+              <div><span class="metric">0.0</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -88,8 +88,8 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                2
-                smells
+                0
+                smell
               </a>
             </li>
           </ul>
@@ -99,28 +99,14 @@
 
     <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
 
-# Class for decrypt the message
-class Handshake
-  def initialize
-    @handshake = [&#39;wink&#39;, &#39;double wink&#39;, &#39;close your eyes&#39;, &#39;jump&#39;]
-  end
+require_relative &#39;./handshake&#39;
 
-  def convert(encoded_msg)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>Handshake#convert doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
-    encoded_msg.to_s(2)
-  end
+handshake = Handshake.new
 
-  def de_crypt(encoded_msg)
-    bits = convert(encoded_msg).split(&#39;&#39;).reverse!
-    msgs = @handshake
-    decrypt = []
-    bits.each_with_index do |bit, i|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md" target="_blank"><b>UncommunicativeVariableName</b></a>        </span>      </div>      <span>Handshake#de_crypt has the variable name 'i'</span>          </div>  </li></ol>
-      next if i &gt; 3 || bit == &#39;0&#39;
-
-      decrypt &lt;&lt; msgs[i]
-    end
-    bits.length &gt; 4 ? decrypt.reverse! : decrypt
-  end
-end
+# 3
+puts handshake.de_crypt(3).to_s
+# 19
+puts handshake.de_crypt(19).to_s
 </code>
   </div>
 </div>
