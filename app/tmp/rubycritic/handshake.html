@@ -88,7 +88,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                3
+                2
                 smells
               </a>
             </li>
@@ -109,7 +109,7 @@ class Handshake
     encoded_msg.to_s(2)
   end
 
-  def de_crypt(encoded_msg)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>Handshake#de_crypt has approx 8 statements</span>          </div>  </li></ol>
+  def de_crypt(encoded_msg)
     bits = convert(encoded_msg).split(&#39;&#39;).reverse!
     msgs = @handshake
     decrypt = []
